@@ -1,26 +1,87 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --primary-050: #f7f6fd;
+  --primary-100: #e9e5f9;
+  --primary-200: #d9d3f5;
+  --primary-300: #b4a6ea;
+  --primary-400: #917ee0;
+  --primary-500: #694ed6;
+  --primary-600: #4538cb;
+  --primary-700: #2123c0;
+  --primary-800: #141483;
+  --primary-900: #060546;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --secondary-050: #fbc9ee;
+  --secondary-100: #f99ae0;
+  --secondary-200: #f66cd4;
+  --secondary-300: #e453bf;
+  --secondary-400: #d648b2;
+  --secondary-500: #c137a2;
+  --secondary-600: #ac258d;
+  --secondary-700: #9d1880;
+  --secondary-800: #910d75;
+  --secondary-900: #8d0073;
+
+  --black: #000000;
+  --white: #ffffff;
+
+  --pink-100: #f04e98;
+  --charcoal-100: #414141;
+  --gray-100: #c7c8ca;
+
+  --primary: var(--primary-500);
+  --secondary: var(--secondary-500);
+  --gradient: linear-gradient(135deg, var(--primary-500) 0%, var(--secondary-500) 100%);
+
+  --background: #fafafa;
+  --surface: #ffffff;
+  --success: #008744;
+  --error: #d60040;
+  --warning: #ff600a;
+
+  --on-primary: #ffffff;
+  --on-secondary: #ffffff;
+  --on-background: #000000;
+  --on-surface: rgba(0, 0, 0, 0.75);
+  --on-surface-medium: rgba(0, 0, 0, 0.54);
+  --on-surface-disabled: rgba(0, 0, 0, 0.29);
+  --on-surface-light: rgba(0, 0, 0, 0.12);
+  --on-error: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --primary: #afa0e2;
+    --secondary: #e453bf;
+
+    --background: #191919;
+    --surface: #242424;
+    --success: #26d07c;
+    --error: #ff4f5c;
+    --warning: #ff880a;
+    --gradient: linear-gradient(135deg, var(--primary-400) 0%, var(--secondary-300) 100%);
+
+    --on-primary: #000000;
+    --on-secondary: #000000;
+    --on-background: #ffffff;
+    --on-surface: #ffffff;
+    --on-error: #000000;
   }
 }
 
 body {
+  color: var(--charcoal-100);
   background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: var(--primary-100);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
